@@ -12,7 +12,7 @@ This project is a reference implementation of a system using the **Command Query
 
 - **Domain-Driven Design (DDD)**: The project employs DDD principles, with an emphasis on the use of abstract classes to define the core domain models. This approach ensures that business logic is encapsulated within the domain layer, making it easier to maintain and evolve over time.
 
-- **Docker Integration**: The project leverages Docker to run essential infrastructure components like **RabbitMQ** and **MongoDB**, ensuring a consistent and portable development environment.
+- **Docker Integration**: The project uses Docker to run essential infrastructure components like **RabbitMQ** and **MongoDB**.
 
 ## **Components**
 
