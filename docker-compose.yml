@@ -1,0 +1,53 @@
+version: '3.8'
+
+services:
+  customer-service:
+    build:
+      context: .
+      dockerfile: reference-architecture/CustomerService/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - ASPNETCORE_URLS=http://+:5000
+      - ASPNETCORE_ENVIRONMENT=Development
+      - CustomerDatabaseSettings__ConnectionString=mongodb://mongo:27017
+      - CustomerDatabaseSettings__DatabaseName=CustomersDb
+      - CustomerDatabaseSettings__CollectionName=Customers
+      - EventBusOptions__PubSubName=pubsub
+      - EventBusOptions__HostName=rabbitmq
+      - EventBusOptions__Port=5672
+      - EventBusOptions__UserName=guest
+      - EventBusOptions__Password=guest
+    networks:
+      - dapr-network
+    depends_on:
+      - mongo
+      - rabbitmq
+
+  mongo:
+    image: mongo:latest
+    ports:
+      - "27017:27017"
+    networks:
+      - dapr-network
+    volumes:
+      - mongo-data:/data/db
+
+  rabbitmq:
+    image: rabbitmq:management
+    ports:
+      - "5672:5672"    # RabbitMQ default AMQP port
+      - "15672:15672"  # RabbitMQ Management UI
+    networks:
+      - dapr-network
+    volumes:
+      - rabbitmq-data:/var/lib/rabbitmq
+
+networks:
+  dapr-network:
+    name: eventdrivenreferencearchitecture_dapr-network
+
+volumes:
+  mongo-data:
+  redis-data:
+  rabbitmq-data:
