@@ -31,3 +31,8 @@ This project is a reference implementation of a system using the **Command Query
 - [.NET (8)](https://dotnet.microsoft.com/download)
 - [Docker](https://www.docker.com/get-started)
 
+
+## **Getting Started**
+
+Start services using Docker:
+docker-compose up -d
