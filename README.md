@@ -35,4 +35,4 @@ This project is a reference implementation of a system using the **Command Query
 ## **Getting Started**
 
 Start services using Docker:
-docker-compose up -d
+**docker-compose up -d**
