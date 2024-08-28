@@ -10,7 +10,7 @@ This project is a reference implementation of a system using the **Command Query
 
 - **Event-Driven Architecture**: The system uses an event bus with abstraction classes to decouple the event publisher from the event handlers, promoting a scalable and loosely-coupled design. Events are raised in response to state changes, and handlers process these events asynchronously.
 
-- **Domain-Driven Design (DDD)**: The project employs DDD principles, with an emphasis on the use of abstract classes to define the core domain models. This approach ensures that business logic is encapsulated within the domain layer, making it easier to maintain and evolve over time.
+- **Domain-Driven Design (DDD)**: The project uaply DDD principles, with an emphasis on the use of abstract classes to define the core domain models. This approach ensures that business logic is encapsulated within the domain layer, making it easier to maintain and evolve over time.
 
 - **Docker Integration**: The project uses Docker to run essential infrastructure components like **RabbitMQ** and **MongoDB**.
 
@@ -20,7 +20,7 @@ This project is a reference implementation of a system using the **Command Query
 
 2. **Event Bus with Abstraction**: Provides an interface for event publication and subscription. The abstraction allows for easy integration with different messaging systems or in-memory event handling.
 
-3. **DDD with Abstract Classes**: The domain layer is built using abstract classes that define the core business rules and entities. This promotes a clean separation between the domain logic and other parts of the application, such as infrastructure and UI.
+3. **DDD with Abstract Classes**: The domain layer is built using abstract classes that define the core business rules and entities.
 
 4. **Dockerized Infrastructure**: RabbitMQ is used as the event bus, and MongoDB serves as the primary data store. Both services are run in Docker containers for ease of setup and consistency across different environments.
 
