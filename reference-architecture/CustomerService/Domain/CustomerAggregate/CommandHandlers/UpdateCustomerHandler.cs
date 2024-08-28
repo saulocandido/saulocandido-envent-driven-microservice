@@ -1,7 +1,6 @@
 using AutoMapper;
 using CustomerService.Domain.CustomerAggregate.Commands;
 using CustomerService.Repositories;
-using MediatR;
 using Common.Integration.Events;
 using Common.EventDriven.Interfaces;
 using Common.CQRS.Abstration.command;
@@ -17,20 +16,17 @@ namespace CustomerService.Domain.CustomerAggregate.CommandHandlers
     public class UpdateCustomerHandler : ICommandHandler<Customer, UpdateCustomer>
     {
         private readonly ICustomerRepository _repository;
-        private readonly IMediator _mediator;
         private readonly IMapper _mapper;
         private readonly ILogger<UpdateCustomerHandler> _logger;
         private readonly IEventBus _eventBus;
 
         public UpdateCustomerHandler(
             ICustomerRepository repository,
-            IMediator mediator,
             IMapper mapper,
             ILogger<UpdateCustomerHandler> logger,
             IEventBus eventBus)
         {
             _repository = repository;
-            _mediator = mediator;
             _mapper = mapper;
             _logger = logger;
             _eventBus = eventBus ?? throw new ArgumentNullException(nameof(eventBus));

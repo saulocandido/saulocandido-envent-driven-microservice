@@ -3,7 +3,6 @@ using Common.CQRS.Abstration;
 using Common.CQRS.Abstration.command;
 using CustomerService.Domain.CustomerAggregate.Commands;
 using CustomerService.Repositories;
-using MediatR;
 
 namespace CustomerService.Domain.CustomerAggregate.CommandHandlers;
 

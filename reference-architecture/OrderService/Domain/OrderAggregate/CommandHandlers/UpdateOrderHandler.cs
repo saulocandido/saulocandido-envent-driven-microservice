@@ -22,7 +22,7 @@ public class UpdateOrderHandler : ICommandHandler<Order, UpdateOrder>
 
         try
         {
-            // Persist entity
+            // Persist entityw
             var entity = await _repository.UpdateAsync(command.Entity);
             if (entity == null) return new CommandResult<Order>(CommandOutcome.NotFound);
             return new CommandResult<Order>(CommandOutcome.Accepted, entity);
