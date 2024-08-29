@@ -59,7 +59,7 @@ namespace Common.CQRS.Abstration.command
             this.Entity = Entity;
         }
 
-        [CompilerGenerated]
+        
         public void Deconstruct(out TEntity? Entity, out Guid EntityId, out string? EntityETag)
         {
             Entity = this.Entity;
